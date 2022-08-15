@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Студенты</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <main class="main">
+    <div class="base__container container-md">
+      <section class="section addition mb-5">
+        <div class="container addition__container d-flex flex-column align-items-center">
+          <h1 class="visually-hidden">Студенты</h1>
+          <h2 class="base__title mb-4">Добавить студента</h2>
+          <form action="" class="addition__form-add-student form-add-student form d-flex flex-column align-items-center"
+            id="form-add-student">
+            <div class="form-add-student__input-wrapper input-wrapper__fio mb-3">
+              <label for="exampleInputEmail1" class="form-add-student form-label">Фамилия</label>
+              <input class="form-add-student__input form__input form-control text-validate" type="text" name="surname"
+                id="input-surname" aria-describedby="surname" placeholder="Введите фамилию">
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-add-student__input-wrapper input-wrapper__fio mb-3">
+              <label for="exampleInputEmail1" class="form-add-student form-label">Имя</label>
+              <input class="form-add-student__input form__input form-control text-validate" type="text" name="name"
+                id="input-name" aria-describedby="name" placeholder="Введите имя">
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-add-student__input-wrapper input-wrapper__fio mb-3">
+              <label for="exampleInputEmail1" class="form-add-student form-label">Отчество</label>
+              <input class="form-add-student__input form__input form-control text-validate" type="text" name="lastname"
+                id="input-lastname" aria-describedby="lastname" placeholder="Введите отчество">
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-add-student__wrapper row mb-4">
+              <div class="form-add-student__input-wrapper input-wrapper-birth-date mb-3 col-sm-6">
+                <label for="exampleInputEmail1" class="form-add-student form-label">Дата рождения</label>
+                <input class="form-add-student__input form__input form-control text-validate" type="date"
+                  name="birthDate" id="input-birthDate" aria-describedby="birthDate"
+                  placeholder="Введите дату рождения">
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="form-add-student__input-wrapper input-wrapper-year-study mb-3 col-sm-6">
+                <label for="exampleInputEmail1" class="form-add-student form-label">Год начала обучения</label>
+                <input class="form-add-student__input form__input form-control text-validate" type="number" min="2000"
+                  name="yearStudy" id="input-yearStudy" aria-describedby="Год начала обучения"
+                  placeholder="Введите год">
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="form-add-student__input-wrapper input-wrapper-faculty mb-3 col-sm-12">
+                <label for="exampleInputEmail1" class="form-add-student form-label">Факультет</label>
+                <input class="form-add-student__input form__input form-control text-validate" type="text" name="faculty"
+                  id="input-faculty" aria-describedby="Факультет" placeholder="Введите факультет">
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="form-add-student__btn-wrapper d-flex justify-content-end">
+              <button type="submit" class="form-add-student__btn btn btn-primary">Добавить студента</button>
+              <!-- <button type="submit" class="form-remove-student__btn btn btn-danger">Удалить</button> -->
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="section filter mb-5">
+        <div class="container filter__container d-flex flex-column align-items-center">
+          <h2 class="base__title mb-4">Найти студента</h2>
+          <form action="#" class="filter__form-filter-student form-filter-student form mb-4" id="form-filter-student">
+            <div class="form-filter-student__wrapper row">
+              <div class="form-filter-student__input-wrapper mb-3 col-sm-6 col-xxl-4">
+                <label for="exampleInputEmail1" class="form-filter-student__input form-label">ФИО</label>
+                <input class="filter-student__input form-control input-text text-validate" type="text" name="search-FIO"
+                  id="input-searth-fio" aria-describedby="search-surname" placeholder="Введите фамилию/имя/отчество">
+              </div>
+              <div class="form-filter-student__input-wrapper mb-3 col-sm-6 col-xxl-4">
+                <label for="exampleInputEmail1" class="form-filter-student__input form-label">Факультет</label>
+                <input class="filter-student__input form-control input-text text-validate" type="text"
+                  name="search-faculty" id="input-searth-faculty" aria-describedby="search-surname"
+                  placeholder="Введите факультет">
+              </div>
+              <div class="form-filter-student__input-wrapper mb-3 col-sm-6 col-xxl-2">
+                <label for="exampleInputEmail1" class="form-filter-student__input form-label">Год начала
+                  обучения</label>
+                <input class="filter-student__input form-control text-validate" type="number"
+                  name="search-year-starting" id="input-searth-year-starting" aria-describedby="search-surname"
+                  placeholder="Введите год" min="2000">
+              </div>
+              <div class="form-filter-student__input-wrapper mb-3 col-sm-6 col-xxl-2">
+                <label for="exampleInputEmail1" class="form-filter-student__input form-label">Год окончания
+                  обучения</label>
+                <input class="filter-student__input form-control text-validate" type="number"
+                  name="search-year-graduation" id="input-searth-year-graduation" aria-describedby="search-surname"
+                  placeholder="Введите год" min="2004">
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="section base">
+        <div class="container base__container">
+          <table class="base__table-student table-student table table-hover table-bordered caption-top">
+            <caption>Список студентов</caption>
+            <thead class="table-student__header table-primary">
+              <th class="table-student__column" data-column="fio">ФИО студента</th>
+              <th class="table-student__column" data-column="faculty">Факультет</th>
+              <th class="table-student__column" data-column="birthDate">ДР и возраст</th>
+              <th class="table-student__column" data-column="yearStudy">Годы обучения</th>
+            </thead>
+            <tbody class="table-student__body" id="list-student"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+</body>
+
+</html>

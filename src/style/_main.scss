@@ -1,0 +1,87 @@
+.main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-width: $container-min-width;
+}
+
+.addition {
+  @include lgMin {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__form-add-student {
+    width: 100%;
+
+    @include mdMin {
+      width: 90%;
+    }
+  }
+}
+
+.form-add-student {
+  &__wrapper {
+    width: 100%;
+
+    @include mdMin {
+      width: 90%;
+    }
+  }
+
+  &__btn-wrapper {
+    width: 100%;
+
+    @include mdMin {
+      width: 90%;
+    }
+  }
+}
+
+// Поля ввода формы добавления студентов
+.input-wrapper-birth-date {
+  padding-left: 0;
+
+  @include smMax {
+    padding-right: 0;
+  }
+}
+
+.input-wrapper-year-study {
+  padding-right: 0;
+
+  @include smMax {
+    padding-left: 0;
+  }
+}
+
+.input-wrapper-faculty {
+  padding: 0;
+}
+
+.input-wrapper__fio {
+  width: 100%;
+
+  @include mdMin {
+    width: 90%;
+  }
+
+  @include smMax {
+    padding-right: 0;
+  }
+}
+
+// Форма фильтра
+.filter__form-filter-student {
+  width: 100%;
+}
+
+// Таблица студентов
+.table-student {
+  @include mdMax {
+    &__row {
+      font-size: 15px;
+    }
+  }
+}
+
