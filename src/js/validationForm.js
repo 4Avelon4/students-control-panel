@@ -88,6 +88,10 @@ function getValidateInputValue(inputObj, errorsObj) {
       return errorsObj;
     }
 
+    if (!birthDateValue) {
+      return errorsObj;
+    }
+
     if (+inputValue < birthDateValue.getFullYear()) {
       errorsObj.push({
         name: `${inputObj.name}`,
