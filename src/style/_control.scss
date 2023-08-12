@@ -1,0 +1,14 @@
+.control {
+  min-height: 38px;
+
+  &__wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: auto;
+    background-color: #fff;
+  }
+
+  &__student-btn:not(:last-child) {
+    margin-right: 20px;
+  }
+}

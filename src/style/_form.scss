@@ -1,0 +1,94 @@
+.section-form {
+  display: none;
+  position: fixed;
+  padding: 20px;
+  padding-bottom: 40px;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  background-color: $body-background;
+  border-radius: 0.375rem;
+
+  @include lgMin {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__form-add-student {
+    width: 100%;
+
+    @include mdMin {
+      width: 90%;
+    }
+  }
+
+  &__button-deactivate {
+    right: 19px;
+    top: 14px;
+
+    @include mdMin {
+      right: 41px;
+      top: 34px;
+    }
+  }
+
+  &__img {
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.form-add-student {
+  &__wrapper {
+    width: 100%;
+
+    @include mdMin {
+      width: 90%;
+    }
+  }
+
+  &__btn-wrapper {
+    width: 100%;
+
+    @include mdMin {
+      width: 90%;
+    }
+  }
+}
+
+.input-wrapper-birthday {
+  padding-left: 0;
+
+  @include smMax {
+    padding-right: 0;
+  }
+}
+
+.input-wrapper-study-start {
+  padding-right: 0;
+
+  @include smMax {
+    padding-left: 0;
+  }
+}
+
+.input-wrapper-faculty {
+  padding: 0;
+}
+
+.input-wrapper__fio {
+  width: 100%;
+
+  @include mdMin {
+    width: 90%;
+  }
+
+  @include smMax {
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Студенты</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <main class="main">
+    <div class="container-md">
+      <h1 class="visually-hidden">Студенты</h1>
+      <!-- <section class="preview"> -->
+      <h2 class="title__preview mb-5">Панель управления студентами</h2>
+      <!-- </section> -->
+      <section class="section search mb-3" id="search">
+        <div class="container search__container d-flex flex-column">
+          <h3 class="search__title mb-4">Найти студента</h3>
+          <form action="#" class="search__form search-form mb-2" id="search-form">
+            <div class="search-form__wrapper row">
+              <div class="search-form__wrapper-input relative mb-3 col-sm-6 col-xxl-4">
+                <label for="exampleInputEmail1" class="search-form__input-label form-label">ФИО</label>
+                <input class="search-form__input input-text text-validate form-control" type="text" name="search-FIO"
+                  id="input-searth-fio" aria-describedby="search-surname" placeholder="Введите фамилию/имя/отчество">
+                <span class="search-form__input-clean input-clean">
+                  <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="search-form__wrapper-input relative mb-3 col-sm-6 col-xxl-4">
+                <label for="exampleInputEmail1" class="search-form__input-label form-label">Факультет</label>
+                <input class="search-form__input input-text text-validate form-control" type="text"
+                  name="search-faculty" id="input-searth-faculty" aria-describedby="search-surname"
+                  placeholder="Введите факультет">
+                <span class="search-form__input-clean input-clean">
+                  <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="search-form__wrapper-input relative mb-3 col-sm-6 col-xxl-2">
+                <label for="exampleInputEmail1" class="search-form__input-label form-label">Год начала
+                  обучения</label>
+                <input class="search-form__input text-validate form-control" type="number" name="search-study-start"
+                  id="input-searth-study-start" aria-describedby="search-surname" placeholder="Введите год" min="2000">
+                <span class="search-form__input-clean input-clean">
+                  <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="search-form__wrapper-input relative mb-3 col-sm-6 col-xxl-2">
+                <label for="exampleInputEmail1" class="search-form__input-label form-label">Год окончания
+                  обучения</label>
+                <input class="search-form__input text-validate form-control" type="number" name="search-year-graduation"
+                  id="input-searth-year-graduation" aria-describedby="search-surname" placeholder="Введите год"
+                  min="2004">
+                <span class="search-form__input-clean input-clean">
+                  <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </form>
+          <section class="section control mb-3" id="control">
+            <div class="container d-flex justify-content-end control__wrapper">
+              <button class="control__student-btn control__student-btn--add btn btn-primary"
+                id="add-student-btn">Добавить</button>
+              <button class="control__student-btn control__student-btn--change btn btn-primary" id="change-student-btn"
+                disabled="disabled">Редактировать</button>
+              <button class="control__student-btn control__student-btn--delete btn btn-danger" id="delete-student-btn"
+                disabled="disabled">Удалить</button>
+            </div>
+          </section>
+        </div>
+      </section>
+      <div class="popap"></div>
+      <div class="delete-info">
+        <div class="delete-info__wrapper">
+          <button class="delete-info__btn-deactivate button--deactivate">
+            <svg class="delete-info__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <p class="delete-info__content">Хотите удалить выбранного студента?</p>
+          <button class="delete-info__btn btn btn-danger" id="delete-student-btn-from-base">Удалить</button>
+        </div>
+      </div>
+    </div>
+    <section class="section section-form">
+      <div class="container section-form__container d-flex flex-column align-items-center">
+        <h3 class="section-form__title mb-4" id="form-title"></h3>
+        <!-- <button class="section-form__button-deactivate" id="section-form__button-exit"> -->
+        <button class="section-form__button-deactivate button--deactivate" id="form-deactivate">
+          <svg class="section-form__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <form action=""
+          class="section-form__form-add-student form-add-student form d-flex flex-column align-items-center"
+          id="form-add-student">
+          <div class="form-add-student__input-wrapper relative input-wrapper__fio mb-3">
+            <label for="exampleInputEmail1" class="form-add-student form-label">Фамилия</label>
+            <input class="form-add-student__input form__input form-control text-validate" type="text" name="surname"
+              id="input-surname" aria-describedby="surname" placeholder="Введите фамилию">
+            <span class="form-add-student__input-clean input-clean">
+              <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-add-student__input-wrapper relative input-wrapper__fio mb-3">
+            <label for="exampleInputEmail1" class="form-add-student form-label">Имя</label>
+            <input class="form-add-student__input form__input form-control text-validate" type="text" name="name"
+              id="input-name" aria-describedby="name" placeholder="Введите имя">
+            <span class="form-add-student__input-clean input-clean">
+              <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-add-student__input-wrapper relative input-wrapper__fio mb-3">
+            <label for="exampleInputEmail1" class="form-add-student form-label">Отчество</label>
+            <input class="form-add-student__input form__input form-control text-validate" type="text" name="lastname"
+              id="input-lastname" aria-describedby="lastname" placeholder="Введите отчество">
+            <span class="form-add-student__input-clean input-clean">
+              <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-add-student__wrapper row mb-4">
+            <div class="form-add-student__input-wrapper relative input-wrapper-birthday mb-3 col-sm-6">
+              <label for="exampleInputEmail1" class="form-add-student form-label">Дата рождения</label>
+              <input class="form-add-student__input form__input form-control text-validate" type="date" name="birthday"
+                id="input-birthday" aria-describedby="birthday" placeholder="Введите дату рождения">
+              <span class="form-add-student__input-clean input-clean input-clean__birthday">
+                <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-add-student__input-wrapper relative input-wrapper-study-start mb-3 col-sm-6">
+              <label for="exampleInputEmail1" class="form-add-student form-label">Год начала обучения</label>
+              <input class="form-add-student__input form__input form-add-student__input-year form-control text-validate"
+                type="number" name="studyStart" id="input-studyStart" aria-describedby="Год начала обучения"
+                placeholder="Введите год">
+              <span class="form-add-student__input-clean input-clean input-clean__year">
+                <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-add-student__input-wrapper relative input-wrapper-faculty mb-3 col-sm-12">
+              <label for="exampleInputEmail1" class="form-add-student form-label">Факультет</label>
+              <input class="form-add-student__input form__input form-control text-validate" type="text" name="faculty"
+                id="input-faculty" aria-describedby="Факультет" placeholder="Введите факультет">
+              <span class="form-add-student__input-clean input-clean">
+                <svg class="input-clean__img" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M6 6L18 18" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+          <div class="form-add-student__btn-wrapper d-flex justify-content-end">
+            <button class="form-add-student__btn btn btn-primary" id="form-submit-button"
+              type="submit">Добавить</button>
+            <!-- <button type="submit" class="form-remove-student__btn btn btn-danger">Удалить</button> -->
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="section base">
+      <div class="container base__container">
+        <table class="base__table-student table-student table table-hover table-bordered caption-top base__table-top"
+          id="table-student__header">
+          <caption>Список студентов</caption>
+          <thead class="table-student__header table-primary">
+            <tr class="table-student__header-row">
+              <th class="table-student__column table-student__column--fio" data-column="fio">ФИО студента</th>
+              <th class="table-student__column table-student__column--faculty" data-column="faculty">Факультет</th>
+              <th class="table-student__column table-student__column--birthday" data-column="birthday">ДР и возраст</th>
+              <th class="table-student__column" data-column="studyStart">Годы
+                обучения
+              </th>
+            </tr>
+          </thead>
+        </table>
+        <div class="table-student__wrapper-body">
+          <table class="base__table-student table-student table table-hover table-bordered caption-top"
+            id="table-student__body">
+            <tbody class="table-student__body" id="list-student"></tbody>
+          </table>
+        </div>
+        <button class="base__button-scroll btn hide" id="button-scroll">
+          <svg class="button-scroll__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8L6 15" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 8L18 15" stroke="#1F2020" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>

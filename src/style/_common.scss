@@ -1,0 +1,80 @@
+.button--deactivate,
+.base__button-scroll {
+  cursor: pointer;
+  position: absolute;
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+  border: none;
+
+  @include mdMin {
+    width: 48px;
+    height: 48px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    opacity: 0.1;
+    border: 1px solid #000000;
+
+    @include mdMin {
+      top: -2px;
+      right: -1px;
+      width: 46px;
+      height: 46px;
+    }
+  }
+}
+
+.button--deactivate,
+.base__button-scroll {
+  &:focus {
+    &::after {
+      outline: none;
+    }
+  }
+
+  &:active {
+    opacity: 0.4;
+
+    &::after {
+      opacity: 0.4;
+    }
+  }
+
+  @include lgMin {
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus,
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      opacity: 0.4;
+
+      &::after {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &,
+  &::after {
+    transition: opacity .1s ease-in-out;
+  }
+}
+
+.table-hover > tbody > tr:hover > * {
+  cursor: pointer;
+}

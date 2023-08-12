@@ -1,0 +1,42 @@
+.delete-info {
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  z-index: 11;
+  min-width: 420px;
+  background-color: #fff;
+  border-radius: 0.375rem;
+  transform: translateX(-50%);
+
+  &__wrapper {
+    padding: 40px 50px;
+  }
+
+  &__content {
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &-deactivate {
+      right: 15px;
+      top: 15px;
+
+      @include mdMin {
+        right: 22px;
+        top: 22px;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    vertical-align: baseline;
+  }
+}
