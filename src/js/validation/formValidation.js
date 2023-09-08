@@ -137,4 +137,3 @@ function inputValidation(inputFormArray, errors) {
 }
 
 export { inputs, inputValidation, getValidateInputValue };
-// export { inputs, inputValidation };

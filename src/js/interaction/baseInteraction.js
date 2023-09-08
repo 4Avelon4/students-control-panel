@@ -17,6 +17,41 @@ const $popap = document.querySelector('.popap');
 
 const errors = [];
 
+function createStudentObj() {
+  if (errors.length) {
+    return {};
+  }
+
+  const newStudentObj = {
+    name: inputs.name.value,
+    surname: inputs.surname.value,
+    lastname: inputs.lastname.value,
+    birthday: new Date(inputs.birthday.value),
+    studyStart: Number(inputs.studyStart.value),
+    faculty: inputs.faculty.value,
+  };
+
+  return newStudentObj;
+}
+
+function compareStudentObj(id) {
+  const studentObj = listStudents.find((student) => student.id === id);
+
+  if (
+    $inputName.value === studentObj.name &&
+    $inputName.value === studentObj.name &&
+    $inputSurname.value === studentObj.surname &&
+    $inputLastname.value === studentObj.lastname &&
+    $inputBirthday.value === studentObj.getBirthdayStringInInput() &&
+    $inputStudyStart.value === studentObj.studyStart &&
+    $inputFaculty.value === studentObj.faculty
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
 async function pushStudentBase() {
   const newStudentObj = createStudentObj();
 
@@ -74,41 +109,6 @@ async function changeStudentBase() {
 
   $form.classList.remove('active');
   $popap.classList.remove('active');
-}
-
-function createStudentObj() {
-  if (errors.length) {
-    return {};
-  }
-
-  const newStudentObj = {
-    name: inputs.name.value,
-    surname: inputs.surname.value,
-    lastname: inputs.lastname.value,
-    birthday: new Date(inputs.birthday.value),
-    studyStart: Number(inputs.studyStart.value),
-    faculty: inputs.faculty.value,
-  };
-
-  return newStudentObj;
-}
-
-function compareStudentObj(id) {
-  const studentObj = listStudents.find((student) => student.id === id);
-
-  if (
-    $inputName.value === studentObj.name &&
-    $inputName.value === studentObj.name &&
-    $inputSurname.value === studentObj.surname &&
-    $inputLastname.value === studentObj.lastname &&
-    $inputBirthday.value === studentObj.getBirthdayStringInInput() &&
-    $inputStudyStart.value === studentObj.studyStart &&
-    $inputFaculty.value === studentObj.faculty
-  ) {
-    return true;
-  }
-
-  return false;
 }
 
 export { pushStudentBase, changeStudentBase };

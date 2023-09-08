@@ -41,16 +41,6 @@ function getSortStudents(prop, dir) {
   });
 }
 
-// События сортировки
-$studentsListTHAll.forEach((element) => {
-  element.addEventListener('click', function () {
-    column = this.dataset.column;
-    columnDir = !columnDir;
-
-    renderTable();
-  });
-});
-
 // Отрисовать таблицу
 async function renderTable() {
   const serverListStudents = await getListStudentsFromServer();
@@ -67,5 +57,15 @@ async function renderTable() {
     $studentsList.append(studentRowTable(student));
   }
 }
+
+// События сортировки
+$studentsListTHAll.forEach((element) => {
+  element.addEventListener('click', function sortTable() {
+    column = this.dataset.column;
+    columnDir = !columnDir;
+
+    renderTable();
+  });
+});
 
 export { renderTable, listStudents };

@@ -52,7 +52,12 @@ const scrollUp = {
     $tabelBody.addEventListener('scroll', () => {
       const scrollY = $tabelBody.scrollY || $tabelBody.scrollTop;
 
-      scrollY > 200 ? this.show() : this.hide();
+      if (scrollY > 200) {
+        this.show();
+      } else {
+        this.hide();
+      }
+      // scrollY > 200 ? this.show() : this.hide();
     });
 
     document.getElementById('button-scroll').onclick = () => {
@@ -139,7 +144,7 @@ export default function panelInteraction() {
     });
   });
 
-  document.getElementById('form-add-student').addEventListener('submit', function (event) {
+  document.getElementById('form-add-student').addEventListener('submit', (event) => {
     event.preventDefault();
 
     const validation = pushStudentValidation();

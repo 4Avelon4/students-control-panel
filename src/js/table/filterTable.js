@@ -10,6 +10,23 @@ const $inputYearGraduation = document.getElementById('input-searth-year-graduati
 const classInputClean = 'input-clean--active';
 const $allCleanElement = document.querySelectorAll('.input-clean');
 
+function getFilteredData() {
+  for (let i = 0; i < $table.rows.length; i++) {
+    const element = $table.rows[i];
+
+    element.classList.remove('hide');
+
+    if (
+      element.cells[0].innerHTML.indexOf($inputFIO.value) === -1 ||
+      element.cells[1].innerHTML.indexOf($inputFaculty.value) === -1 ||
+      element.cells[3].innerHTML.substr(0, 4).indexOf($inputStudyStart.value) === -1 ||
+      element.cells[3].innerHTML.substr(7, 4).indexOf($inputYearGraduation.value) === -1
+    ) {
+      element.classList.add('hide');
+    }
+  }
+}
+
 $allCleanElement.forEach((input) =>
   input.addEventListener('click', (event) => {
     const targetInputClean = event.currentTarget;
@@ -29,8 +46,6 @@ export function inputClean(input, flag) {
 }
 
 export function filteredTable() {
-  $formFilter.addEventListener('keyup', textInputTimer);
-
   let timeout = null;
 
   function textInputTimer() {
@@ -46,21 +61,6 @@ export function filteredTable() {
 
     timeout = setTimeout(getFilteredData, 300);
   }
-}
 
-function getFilteredData() {
-  for (let i = 0; i < $table.rows.length; i++) {
-    const element = $table.rows[i];
-
-    element.classList.remove('hide');
-
-    if (
-      element.cells[0].innerHTML.indexOf($inputFIO.value) === -1 ||
-      element.cells[1].innerHTML.indexOf($inputFaculty.value) === -1 ||
-      element.cells[3].innerHTML.substr(0, 4).indexOf($inputStudyStart.value) === -1 ||
-      element.cells[3].innerHTML.substr(7, 4).indexOf($inputYearGraduation.value) === -1
-    ) {
-      element.classList.add('hide');
-    }
-  }
+  $formFilter.addEventListener('keyup', textInputTimer);
 }

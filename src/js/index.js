@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import '@/style/style.scss';
 
 import { renderTable } from './table/renderTable';
