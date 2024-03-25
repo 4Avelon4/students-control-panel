@@ -8,7 +8,7 @@ describe('Проверка класса Student', () => {
     'Сергеевич',
     'Информационных технологий',
     new Date(1994, 10, 7),
-    2019
+    2020
   );
 
   test('Должен вернуть корректные данные при вызове свойства id', () => {
@@ -48,6 +48,6 @@ describe('Проверка класса Student', () => {
   });
 
   test('Должен вернуть корректные данные при вызове метода student.getAge()', () => {
-    expect(student.getAge()).toStrictEqual(Number('28'));
+    expect(student.getAge()).toStrictEqual(Number('29'));
   });
 });
