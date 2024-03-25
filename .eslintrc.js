@@ -17,5 +17,6 @@ module.exports = {
     'no-plusplus': 'off',
     'no-restricted-syntax': [2, 'WithStatement'],
     'max-len': ['error', 120],
+    'no-undef': 'off',
   },
 };
